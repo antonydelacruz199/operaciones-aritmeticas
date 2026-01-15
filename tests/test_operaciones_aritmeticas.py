@@ -48,5 +48,13 @@ class TestOperacionesAritmeticas(unittest.TestCase):
             # assert
             self.assertEqual(resultadoEsperado, resultadoCalculado)
 
+    def test_division_divisiorCero_lanzaExcepcion(self):
+        with self.assertRaises(ZeroDivisionError):
+            self.operacion.division(5, 0)
+
+    def test_division_noNumeros_lanzaExcepcion(self):
+        with self.assertRaises(TypeError):
+            self.operacion.division(5, "a")
+
     def tearDown(self):
         self.operacion = None

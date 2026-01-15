@@ -7,6 +7,8 @@ class OperacionesAritmeticas:
     def division(self, dividendo, divisor):
         if divisor == 0:
             raise ZeroDivisionError
+        if not isinstance(dividendo, (int, float)) or not isinstance(divisor, (int, float)):
+            raise TypeError
         return dividendo / divisor
 
     
