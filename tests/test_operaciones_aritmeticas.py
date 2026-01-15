@@ -30,6 +30,9 @@ class TestOperacionesAritmeticas(unittest.TestCase):
         # assert
         self.assertEqual(resultadoEsperado, resultadoCalculado)
 
-    def test_suma_NoNumeros_retornaSuma(self):
+    def test_suma_NoNumeros_lanzaExcepcion(self):
         with self.assertRaises(TypeError):
             self.operacion.suma(5, "a")
+    
+    def tearDown(self):
+        self.operacion = None
