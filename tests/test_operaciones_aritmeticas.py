@@ -34,5 +34,19 @@ class TestOperacionesAritmeticas(unittest.TestCase):
         with self.assertRaises(TypeError):
             self.operacion.suma(5, "a")
     
+
+
+    def test_division_numeros_retornaCoiente(self):
+            # arrange
+            dividendo = 20
+            divisor = 4
+            resultadoEsperado = 5
+
+            # do
+            resultadoCalculado = self.operacion.division(dividendo, divisor)
+
+            # assert
+            self.assertEqual(resultadoEsperado, resultadoCalculado)
+
     def tearDown(self):
         self.operacion = None
